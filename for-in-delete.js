@@ -42,10 +42,11 @@ function showValues( obj ) {
   //Code Here
   let newStr = ''
   for(var key in obj){
-    newStr = `${newStr} ${key}`
+    newStr = newStr + obj[key]
   }
   return newStr
 }
+
 
 
 
@@ -58,16 +59,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-function greaterThan10(obj){
+function greaterThan10(obj) {
   for (var key in obj) {
-    if (key[prop] > 10) {
-      obj[key][prop] = 0
+    if (obj[key] > 10) {
+      obj[key] = 0
     }
   }
   return obj
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -80,7 +79,7 @@ function greaterThan10(obj){
 //Code Here
 function double(obj) {
   for(var key in obj){
-    key[value] = key[value]*2
+    obj[key] = obj[key]*2
   }
   return obj
 }
@@ -97,14 +96,18 @@ function double(obj) {
 */
 
 //Code Here
+
 function secrets(obj){
-  newStr = ''
-  for (const key in obj) {
-    if (key[prop[0,1] == 'sh'] ) {
-      newStr = `${newStr} ${key[prop]}`
+  let newStr = '';
+  for(var key in obj){
+    if(key.startsWith("sh")){
+      newStr += obj[key];
     }
   }
+  return newStr;
 }
+
+
 
 
 /* 
@@ -113,17 +116,17 @@ function secrets(obj){
   Uncomment the example below to see a for in loop deleting all the properties inside an object.
 */
 
-// var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
+var deleteAllThethings = {
+  one: 1,
+  two: 2,
+  three: 3
+}
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
-// }
+for(var key in deleteAllThethings) {
+  delete deleteAllThethings[key]
+}
 
-// console.log(deleteAllThethings)
+console.log(deleteAllThethings)
 
 
 
@@ -162,9 +165,9 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-for (let key in deleteTheBigNumbers){
-  if(key > 100){
-    delete deleteTheBigNumbers.key
+for (var key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key]
   }
 }
 
@@ -179,7 +182,14 @@ for (let key in deleteTheBigNumbers){
 */
 
 //Code Here
-
+function startsWithK (obj) {
+  for(var key in obj) {
+    if(key.startsWith("k")) {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -194,5 +204,12 @@ for (let key in deleteTheBigNumbers){
 */
 
 //Code Here
-
+function hiddenTreasure(obj) {
+  for(var key in obj) {
+    if(!obj[key].includes('treasure')) {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 

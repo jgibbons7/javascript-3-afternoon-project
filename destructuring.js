@@ -68,10 +68,9 @@ function greeting( obj ) {
 //   }, 0)
 // }
 
-function totalPopulation(arr){
-  const sum = arr.reduce((acc, element) => {
-    return acc + element
-  }, 0)
+function totalPopulation(obj){
+  const {utah, california, texas, arizona} = obj
+    return utah + california + texas + arizona
 }
 
 
@@ -115,9 +114,8 @@ function ingredients(obj) {
 
 // //Code Here
 function largeNumbers({first, second, third}){
+  return Math.min(first, second, third)
   
-  
-
 }
 
 
@@ -131,5 +129,7 @@ function largeNumbers({first, second, third}){
 */
 
 //Code Here
-
+function numberGroups ({a, b, c}) {
+  "smmaashhhh facceeee"
+}
 

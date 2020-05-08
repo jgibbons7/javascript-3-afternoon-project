@@ -51,9 +51,18 @@ var employees = [
 */
 
 //Code Here
-// function employeeUpdater(){
-// for (let key in employees)
-// }
+function employeeUpdater() {
+  for (i = 0; i < employees.length; i++) {
+    if(employees[i].firstName === 'Theo') {
+      employees.splice(i,1)
+    } else {
+      if(employees[i].firstName === 'Lorie') {
+        employees[i].department = 'HR'
+      }
+    }
+  }
+  return employees
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -150,7 +159,25 @@ var myCar = {
 */
 
 //Code Here
-function recordCleaner()
+
+
+
+
+function recordCleaner() {
+  myCar.accidents.forEach((accident) => {
+    accident.atFaultForAccident = false
+  })
+  return myCar
+}
+
+// function recordCleaner() {
+//   for (i = 0; i < myCar.length; i++) {
+//     if (myCar.accidents[i].atFaultForAccident === true) {
+//       myCar.accidents[i].atFaultForAccident = false
+//     }
+//   }
+//   return myCar
+// }
 
 
 ////////// PROBLEM 5 //////////
@@ -169,5 +196,19 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+
+function looper() {
+  for(i =0; i < numsArr.length; i++) {
+    for (j =0; j < numsArr[i].length; j++) {
+      console.log(i,j)
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = 'even'
+      } else {
+        numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  return numsArr
+}
 
 
